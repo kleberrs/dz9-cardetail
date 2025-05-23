@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ9 Car Detail - Estética Automotiva Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#121212',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+        }
+        
+        .gold-border {
+            position: relative;
+        }
+        
+        .gold-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #D4AF37;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .whatsapp-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/556191212337" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-lg whatsapp-btn z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-black/90 backdrop-blur-md fixed w-full z-40 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-gold text-2xl font-bold">DZ9 <span class="text-white">Car Detail</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-white hover:text-gold transition duration-300">Início</a>
+                        <a href="#services" class="text-white hover:text-gold transition duration-300">Serviços</a>
+                        <a href="#gallery" class="text-white hover:text-gold transition duration-300">Galeria</a>
+                        <a href="#contact" class="text-white hover:text-gold transition duration-300">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-md border-t border-gold/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-white hover:text-gold transition duration-300">Início</a>
+                <a href="#services" class="block px-3 py-2 text-white hover:text-gold transition duration-300">Serviços</a>
+                <a href="#gallery" class="block px-3 py-2 text-white hover:text-gold transition duration-300">Galeria</a>
+                <a href="#contact" class="block px-3 py-2 text-white hover:text-gold transition duration-300">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center pt-20">
+        <div class="max-w-4xl px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                <span class="text-gold">DZ9</span> Car Detail
+            </h1>
+            <h2 class="text-xl md:text-2xl mb-8 text-gold font-light">Excelência em Estética Automotiva</h2>
+            <p class="text-lg md:text-xl mb-10 text-white/90 leading-relaxed">
+                Na DZ9 Car Detail, transformamos seu veículo em uma obra de arte sobre rodas. 
+                Com técnicas avançadas e produtos premium, garantimos um acabamento impecável 
+                que reflete seu cuidado e sofisticação.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-gold hover:bg-gold/90 text-black font-bold py-3 px-8 rounded transition duration-300">
+                    Agende Seu Serviço
+                </a>
+                <a href="#services" class="border border-gold hover:bg-gold/10 text-gold font-bold py-3 px-8 rounded transition duration-300">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 gold-border pb-4 inline-block">Nossos Serviços</h2>
+                <p class="text-white/80 max-w-2xl mx-auto mt-6">
+                    Oferecemos soluções completas em estética automotiva para manter seu veículo 
+                    sempre com aparência de novo, utilizando as melhores técnicas e produtos do mercado.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-black/50 border border-gold/20 rounded-lg p-8 transition duration-500 hover:border-gold/50">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Polimento Técnico</h3>
+                    <p class="text-white/80">
+                        Remoção profissional de riscos e marcas, com realce do brilho original da pintura 
+                        através de técnicas avançadas de polimento.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-black/50 border border-gold/20 rounded-lg p-8 transition duration-500 hover:border-gold/50">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-car-wash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lavagem Técnica</h3>
+                    <p class="text-white/80">
+                        Lavagem detalhada e segura, utilizando produtos específicos para cada parte do veículo, 
+                        garantindo limpeza sem danos à pintura.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-black/50 border border-gold/20 rounded-lg p-8 transition duration-500 hover:border-gold/50">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Higienização Interna</h3>
+                    <p class="text-white/80">
+                        Limpeza profunda de estofados, carpetes e ar-condicionado, eliminando ácaros, bactérias 
+                        e odores desagradáveis.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-black/50 border border-gold/20 rounded-lg p-8 transition duration-500 hover:border-gold/50">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vitrificação Cerâmica</h3>
+                    <p class="text-white/80">
+                        Proteção cerâmica de longa duração para pintura, vidros e rodas, com efeito hidrorepelente 
+                        e brilho intenso que facilita a manutenção.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 gold-border pb-4 inline-block">Nossa Galeria</h2>
+                <p class="text-white/80 max-w-2xl mx-auto mt-6">
+                    Confira os resultados impressionantes dos nossos serviços em veículos de diversos modelos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" 
+                             alt="Polimento Técnico" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Polimento Técnico</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Lavagem Técnica" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Lavagem Técnica</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1283&q=80" 
+                             alt="Higienização Interna" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Higienização Interna</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
+                             alt="Vitrificação Cerâmica" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Vitrificação Cerâmica</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Detalhamento Completo" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Detalhamento Completo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item overflow-hidden rounded-lg">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                             alt="Resultado Final" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-black font-bold text-lg">Resultado Final</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 gold-border pb-4 inline-block">Entre em Contato</h2>
+                <p class="text-white/80 max-w-2xl mx-auto mt-6">
+                    Solicite um orçamento ou tire suas dúvidas sobre nossos serviços. Estamos à disposição para 
+                    atender da melhor forma possível.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-black/50 border border-gold/20 rounded-lg p-8">
+                    <h3 class="text-xl font-bold text-white mb-6">Envie sua mensagem</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-white/80 mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full bg-black/30 border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-white/80 mb-2">E-mail</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full bg-black/30 border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition duration-300">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-white/80 mb-2">Telefone</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full bg-black/30 border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition duration-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-white/80 mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full bg-black/30 border border-gold/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="bg-gold hover:bg-gold/90 text-black font-bold py-3 px-8 rounded transition duration-300 w-full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-black/50 border border-gold/20 rounded-lg p-8 mb-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-gold text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Endereço</h4>
+                                    <p class="text-white/80">Brasília - DF</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-gold text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Telefone</h4>
+                                    <p class="text-white/80">(61) 9121-2337</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-gold text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">E-mail</h4>
+                                    <p class="text-white/80">contato@dz9cardetail.com.br</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-gold text-xl mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1">Horário de Funcionamento</h4>
+                                    <p class="text-white/80">Segunda a Sexta: 08:00 - 18:00</p>
+                                    <p class="text-white/80">Sábado: 09:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/50 border border-gold/20 rounded-lg p-8">
+                        <h3 class="text-xl font-bold text-white mb-6">WhatsApp Rápido</h3>
+                        <p class="text-white/80 mb-6">
+                            Para atendimento mais rápido, clique no botão abaixo para conversar diretamente 
+                            pelo WhatsApp com nossa equipe.
+                        </p>
+                        <a href="https://wa.me/556191212337" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Enviar Mensagem
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <span class="text-gold">DZ9</span> Car Detail
+                    </h3>
+                    <p class="text-white/80 mb-6">
+                        Excelência em estética automotiva, transformando veículos em obras de arte sobre rodas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/dz9cardetail/" target="_blank" class="text-white hover:text-gold transition duration-300 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-gold transition duration-300 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-gold transition duration-300 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-white/80 hover:text-gold transition duration-300">Início</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-gold transition duration-300">Serviços</a></li>
+                        <li><a href="#gallery" class="text-white/80 hover:text-gold transition duration-300">Galeria</a></li>
+                        <li><a href="#contact" class="text-white/80 hover:text-gold transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Newsletter</h4>
+                    <p class="text-white/80 mb-4">
+                        Inscreva-se para receber novidades e promoções exclusivas.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" 
+                               class="bg-black/30 border border-gold/20 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:border-gold transition duration-300 w-full">
+                        <button type="submit" class="bg-gold hover:bg-gold/90 text-black font-bold px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gold/10 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    &copy; 2023 DZ9 Car Detail. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
